@@ -12,7 +12,7 @@ export const CartProvider = ({ children }) => {
   const fetchCart = async () => {
     try {
       const { data } = await getCart();
-      setCart(data.data);
+      setCart(data?.data || { items: [], totalPrice: 0 });
     } catch (error) {
       console.error('Error fetching cart:', error);
     } finally {
@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
   const addItem = async (productId, quantity) => {
     try {
       const { data } = await addToCart(productId, quantity);
-      setCart(data.data);
+      if (data?.data) setCart(data.data);
     } catch (error) {
       console.error('Error adding to cart:', error);
       throw error;
@@ -37,7 +37,7 @@ export const CartProvider = ({ children }) => {
   const updateItem = async (productId, quantity) => {
     try {
       const { data } = await updateCartItem(productId, quantity);
-      setCart(data.data);
+      if (data?.data) setCart(data.data);
     } catch (error) {
       console.error('Error updating cart item:', error);
       throw error;
@@ -47,7 +47,7 @@ export const CartProvider = ({ children }) => {
   const removeItem = async (productId) => {
     try {
       const { data } = await removeFromCart(productId);
-      setCart(data.data);
+      if (data?.data) setCart(data.data);
     } catch (error) {
       console.error('Error removing cart item:', error);
       throw error;

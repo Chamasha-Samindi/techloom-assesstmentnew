@@ -14,7 +14,7 @@ function Dashboard() {
   const fetchProducts = async () => {
     try {
       const res = await api.get('/products');
-      setProducts(res.data.data);
+      setProducts(res.data?.data || []);
     } catch (err) {
       console.error(err);
     } finally {

@@ -25,7 +25,7 @@ const ProductList = () => {
       if (maxPrice) params.maxPrice = maxPrice;
 
       const { data } = await getProducts(params);
-      setProducts(data.data);
+      setProducts(data?.data || []);
     } catch (error) {
       console.error('Error fetching products:', error);
     } finally {

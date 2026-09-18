@@ -20,7 +20,7 @@ const ProductDetail = () => {
     const fetchProduct = async () => {
       try {
         const { data } = await getProductById(id);
-        setProduct(data.data);
+        setProduct(data?.data || null);
       } catch (err) {
         setError('Product not found');
       } finally {

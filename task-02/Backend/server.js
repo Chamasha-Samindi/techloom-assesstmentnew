@@ -11,9 +11,11 @@ const orderRoutes = require('./routes/orderRoutes');
 const app = express();
 
 // Middleware
-// Enable CORS for frontend running on 5173
+// Enable CORS for frontend running on 5173 or Vercel
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: function (origin, callback) {
+    callback(null, true);
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));

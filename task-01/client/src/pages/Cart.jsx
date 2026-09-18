@@ -19,21 +19,26 @@ function Cart() {
 
     try {
       const res = await api.get(`/carts/${cartId}`);
-      setCart(res.data.data);
+      const data = res.data?.data;
+      setCart(data);
 
       // Initialize local quantities
       const qs = {};
-      res.data.data.items.forEach(item => {
-        qs[item.productId] = item.quantity;
-      });
+      if (data && data.items) {
+        data.items.forEach(item => {
+          qs[item.productId] = item.quantity;
+        });
+      }
       setQuantities(qs);
 
       // Fetch product details for names
       const prodRes = await api.get('/products');
       const prodMap = {};
-      prodRes.data.data.forEach(p => {
-        prodMap[p._id] = p;
-      });
+      if (prodRes.data?.data) {
+        prodRes.data.data.forEach(p => {
+          prodMap[p._id] = p;
+        });
+      }
       setProducts(prodMap);
     } catch (err) {
       console.error(err);

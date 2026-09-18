@@ -8,7 +8,7 @@ function Orders() {
   const fetchOrders = async () => {
     try {
       const res = await api.get('/orders');
-      setOrders(res.data.data);
+      setOrders(res.data?.data || []);
     } catch (err) {
       console.error(err);
     } finally {

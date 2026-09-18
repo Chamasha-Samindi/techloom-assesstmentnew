@@ -10,7 +10,7 @@ const OrderHistory = () => {
   const fetchOrders = async () => {
     try {
       const { data } = await getOrderHistory();
-      setOrders(data.data);
+      setOrders(data?.data || []);
     } catch (error) {
       console.error('Error fetching orders:', error);
     } finally {
