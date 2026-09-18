@@ -1,8 +1,8 @@
 # Techloom.ai Software Engineer Intern - Practical Assessment
 
-**Repository URL:** [Add your GitHub repo link here]
-**Task 1 Deployment Link:** [Add Task 1 Live Link here]
-**Task 2 Deployment Link:** [Add Task 2 Live Link here]
+**Repository URL:** https://github.com/Chamasha-Samindi/techloom-assesstmentnew
+**Task 1 Deployment Link:** https://stockgurdpos-frontend.vercel.app/
+**Task 2 Deployment Link:** https://ecom-frontend-nine-lac.vercel.app/
 
 This repository contains the completion of the Techloom Software Engineer Intern Practical Assessment, consisting of two main tasks focused on concurrency-safe MERN stack applications.
 
