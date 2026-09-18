@@ -66,4 +66,4 @@ This project has been fully configured for Vercel deployment:
 
 ### How to Deploy
 1. Create a new Vercel project for the **Frontend**. Set the Root Directory to `task-02/frontend`. Add the `VITE_API_URL` environment variable pointing to your deployed backend URL.
-2. Create a new Vercel project for the **Backend**. Set the Root Directory to `task-02/Backend`. Add your `MONGO_URI` environment variable.
+2. Create a new Vercel project for the **Backend**. Set the Root Directory to `task-02/Backend`. Add your `MONGO_URI` environment variables.
